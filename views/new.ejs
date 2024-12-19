@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Transaction</title>
+</head>
+<body>
+<h1>Add New Transaction</h1>
+<form action="/transaction" method="POST">
+    <label for="amount">Amount:</label>
+    <input type="number" name="amount" id="amount" required>
+
+    <label for="category">Category:</label>
+    <input type="text" name="category" id="category" required>
+
+    <label for="dateTime">Date:</label>
+    <input type="date" name="dateTime" id="dateTime" required>
+
+    <button type="submit">Add Transaction</button>
+</form>
+
+<a href="/">Back to list</a>
+</body>
+</html>

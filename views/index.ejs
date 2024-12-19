@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction List</title>
+</head>
+<body>
+<h1>Transaction List</h1>
+<a href="/new">
+    <button>Add New Transaction</button>
+</a>
+
+<ul>
+    <% transactions.forEach(transaction => { %>
+        <li>
+            <strong>Amount:</strong> <%= transaction.amount %>,
+            <strong>Category:</strong> <%= transaction.category %>,
+            <strong>Date:</strong> <%= new Date(transaction.dateTime).toLocaleDateString() %>
+
+            <a href="/transaction/<%= transaction._id %>/update">
+                <button>Update</button>
+            </a>
+
+
+            <form action="/transaction/<%= transaction._id %>/delete" method="POST" style="display:inline;">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    <% }); %>
+</ul>
+
+</body>
+</html>
+
